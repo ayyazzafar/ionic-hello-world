@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="fastlane.lanes">
+    
+    
+    
+      
+      <testcase classname="fastlane.lanes" name="0: ionic" time="69.232636404">
+        
+      </testcase>
+    
+      
+      <testcase classname="fastlane.lanes" name="1: supply" time="34.661673161">
+        
+      </testcase>
+    
+  </testsuite>
+</testsuites>

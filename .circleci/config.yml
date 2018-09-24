@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: rakshans1/ionic-fastlane
+    steps:
+      - checkout
+      - run:
+          name: Install node modules
+          command: npm install && ionic cordova platform add android
+      # - run:
+      #     name: Building android
+      #     command: ionic cordova build android
+      - run:
+          name: 'deploy to playstore'
+          command: 'fastlane android testt'
+      - store_artifacts:
+          path: platforms/*

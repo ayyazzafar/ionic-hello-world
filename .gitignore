@@ -1,0 +1,33 @@
+node_modules/*
+platforms
+./platforms/*
+platforms/android/*    ## Customize the test machine
+machine:
+    timezone:
+        America/Denver # Set the timezone
+
+    environment:
+        XCODE_SCHEME: symbolicator
+        XCODE_WORKSPACE: symbolicator
+
+## Customize dependencies
+dependencies:
+    pre:
+        - npm install -g typescript typings ionic cordova ios-sim ios-deploy
+        - typings install
+        - gem install fastlane -v 2.2.0
+
+    post:
+        - ionic platform add ios
+
+## customize test commands
+test:
+    override:
+        - ionic build ios
+
+deployment:
+    beta_distribution:
+        branch: 'develop'
+        commands:
+            - fastlane ios beta build_number:$CIRCLE_BUILD_NUM
+            - cp -R ./dist $CIRCLE_ARTIFACTSplatforms/

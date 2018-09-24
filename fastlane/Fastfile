@@ -1,0 +1,52 @@
+platform :android do
+  desc "Deploy android app on play store"
+  lane :debug do
+    ionic(
+      platform: 'android',
+      prod: false,
+      release: false
+    )
+  end;
+
+
+  lane :testt do
+    ionic(
+      platform: 'android',
+      prod: true,
+      release: true,
+      keystore_path: './my-release-key.jks',
+      keystore_alias: 'my-alias',
+      keystore_password: ENV['KEYSTORE_PASSWORD']
+    )
+    supply(
+      apk: 'platforms/android/app/build/outputs/apk/release/app-release.apk',
+      track: 'production',
+
+      )
+
+ 
+  end
+
+  lane :screenshots do
+    retrofit_cordova_screenshots_android
+    gradle(
+      task: 'assemble',
+      build_type: 'Debug',
+      project_dir: 'platforms/android'
+    )
+    gradle(
+      task: 'assemble',
+      build_type: 'AndroidTest',
+      project_dir: 'platforms/android'
+    )
+    screengrab
+  end
+
+  lane :change do
+    set_changelog(
+      changelog: 'hello test log',
+      platform: 'android'
+    )
+  end
+
+end
