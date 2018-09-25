@@ -13,8 +13,7 @@ pipelines:
 
     master:
           - step:
-              caches:
-              - docker
+
               script:
               - npm install && ionic cordova platform add android
               # installing scp command
