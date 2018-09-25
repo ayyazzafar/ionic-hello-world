@@ -7,26 +7,26 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-android-permissions": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ayyazhelloworld.app"
+    },
+    "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     },
-    "cordova-plugin-ionic-keyboard": {
+    "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     },
     "cordova-plugin-ionic-webview": {
       "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+",
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     },
-    "cordova-plugin-splashscreen": {
+    "cordova-plugin-ionic-keyboard": {
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.ayyazhelloworld.app"
-    },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "com.ayyazhelloworld.app"
     }
   },
