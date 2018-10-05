@@ -5,15 +5,12 @@
 # You can specify a custom docker image from Docker Hub as your build environment.
 options:
   max-time: 6 
-image: rakshans1/ionic-fastlane
+image: ayyazzafar/ionic-fastlane
 
 pipelines:
   branches:
-    
-
     master:
           - step:
-
               script:
               - npm install && ionic cordova platform add android
               # installing scp command
